@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet.photon.css">
+       <style>
+  html, body { height: 100%; margin: 0; }
+  #app {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  #sidebar {
+  width: 360px;
+  min-width: 360px;        /* ← clave */
+  flex: 0 0 360px;         /* ← evita que se achique */
+
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: auto;
+
+  border-right: 1px solid rgba(0,0,0,0.06);
+  background: #ffffff;
+  font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  position: sticky;        /* ← lo mantiene visible */
+  top: 0;
+  height: 100vh;
+}
+  #main { flex: 1; position: relative; }
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+
+ .sb-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+  .sb-sub {
+  font-size: 13px;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+  .sb-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+  .sb-card-title { font-weight: 700; margin-bottom: 10px; }
+  .sb-label { display:block; margin: 8px 0 4px; font-size: 12px; opacity: 0.8; }
+  .sb-select, .sb-btn {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.14);
+    box-sizing: border-box;
+    background: #fff;
+  }
+  .sb-btn { margin-top: 10px; cursor: pointer; font-weight: 600; }
+  .sb-stat { margin: 6px 0; }
+  .sb-text { font-size: 13px; opacity: 0.9; }
+/* Encabezado de la leyenda alineado a la izquierda y con peso */
+.leaflet-control-layers-expanded::before {
+  content: "Leyenda";
+  display: block;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: left;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+/* ===== Look más “web app” (cambio visible) ===== */
+
+/* Fondo general más suave */
+body{
+  background: #eef2f6 !important;
+}
+
+/* Sidebar más “panel” */
+#sidebar{
+  background: #ffffff !important;
+  border-right: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* Título con más presencia (sin cambiar tu tipografía) */
+.sb-title{
+  letter-spacing: -0.2px !important;
+}
+
+/* Cards más “tidy”: menos sombra, borde más limpio */
+.sb-card{
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+}
+
+/* Inputs: estilo “sistema” */
+.sb-select, .sb-btn{
+  border-radius: 12px !important;
+  border: 1px solid rgba(0,0,0,0.14) !important;
+  background: #ffffff !important;
+}
+
+/* Hover/focus más pro (se nota) */
+.sb-select:focus, .sb-btn:focus{
+  outline: none !important;
+  border-color: rgba(0,0,0,0.25) !important;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.06) !important;
+}
+
+/* Botón: un poquito más “UI” */
+.sb-btn{
+  padding: 10px 12px !important;
+}
+
+/* Mapa: que parezca “embebido” en la app */
+#main{
+  background: #eef2f6 !important;
+  padding: 14px !important;
+}
+#map{
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 44px rgba(0,0,0,0.12) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+/* Panel de capas (leyenda) más “pro” */
+.leaflet-control-layers-expanded{
+  border-radius: 16px !important;
+  border: 1px solid rgba(0,0,0,0.10) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.16) !important;
+}
+/* Vista tabla */
+#tableView{
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  background: #eef2f6;
+}
+
+#mapView{
+  height: 100%;
+  width: 100%;
+}
+
+.tbl-header{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.tbl-title{
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.tbl-search{
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: #fff;
+}
+
+.tbl-status{
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.tbl-wrap{
+  height: calc(100% - 58px);
+  overflow: auto;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 16px;
+}
+
+.tbl{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tbl thead th{
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  text-align: left;
+  padding: 10px 10px;
+  font-weight: 800;
+  z-index: 2;
+}
+
+.tbl tbody td{
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 10px;
+  vertical-align: top;
+}
+
+.tbl tbody tr:hover{
+  background: rgba(0,0,0,0.03);
+}
+
+/* ===== TABLA: scroll horizontal + botones ===== */
+#tblWrap{
+  width: 100%;
+  height: calc(100% - 58px);
+  overflow-x: auto;
+  overflow-y: auto;
+  display: block;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 16px;
+  padding-bottom: 14px; /* deja aire para la barra horizontal */
+  box-sizing: border-box;
+}
+
+/* La tabla necesita ancho "real" para que exista scroll horizontal */
+#tbl{
+  width: max-content !important;
+  min-width: 100% !important;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+#tbl th, #tbl td{
+  white-space: nowrap;
+}
+
+/* Barra horizontal más visible (Chrome/Edge) */
+#tblWrap::-webkit-scrollbar{
+  height: 12px;
+  width: 12px;
+}
+#tblWrap::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.25);
+  border-radius: 999px;
+}
+#tblWrap::-webkit-scrollbar-track{
+  background: rgba(0,0,0,0.06);
+  border-radius: 999px;
+}
+
+.tbl-nav{
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex: 0 0 auto;
+}
+.tbl-nav button{
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+}
+/* Que la vista de tabla no ocupe todo el ancho */
+#tableView{
+  max-width: 1200px;     /* probá 1000, 1200, 1400 */
+  margin: 0 auto;        /* centra el panel */
+  padding: 0 12px;       /* un borde interno */
+  box-sizing: border-box;
+}
+</style>
+        <title>Procesos de problematización ambiental por agroquímicos en Argentina: análisis espacial de noticias y ordenanzas</title>
+    </head>
+    <body>
+        <div id="app">
+  <aside id="sidebar">
+<div class="sb-toolbar">
+  <button class="tb-btn" id="btnFilters" type="button" title="Filtros">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="6" y1="12" x2="18" y2="12"/>
+      <line x1="10" y1="18" x2="14" y2="18"/>
+    </svg>
+  </button>
+
+  <button class="tb-btn" id="btnLayers" type="button" title="Capas">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="12 2 22 7 12 12 2 7 12 2"/>
+      <polyline points="2 17 12 22 22 17"/>
+      <polyline points="2 12 12 17 22 12"/>
+    </svg>
+  </button>
+
+  <button class="tb-btn" id="btnInfo" type="button" title="Información">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="12" y1="16" x2="12" y2="12"/>
+      <line x1="12" y1="8" x2="12.01" y2="8"/>
+    </svg>
+  </button>
+<button class="tb-btn" id="btnTable" type="button" title="Ordenanzas">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+    <line x1="7" y1="8" x2="17" y2="8"></line>
+    <line x1="7" y1="12" x2="17" y2="12"></line>
+    <line x1="7" y1="16" x2="14" y2="16"></line>
+  </svg>
+</button>
+</div>
+   <div class="sb-title">
+  Procesos de problematización social del daño por agroquímicos en Argentina
+</div>
+<div class="sb-sub">
+  Análisis espacial de noticias y ordenanzas
+</div>
+
+    <div id="panelFilters">
+  <div class="sb-card">
+    <div class="sb-card-title">Filtros (Localidades)</div>
+
+    <label class="sb-label">Año</label>
+    <select id="fYear" class="sb-select">
+      <option value="">Todos</option>
+    </select>
+
+    <label class="sb-label">Ordenanza</label>
+    <select id="fOrd" class="sb-select">
+      <option value="">Todas</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select>
+
+    <button id="btnClear" type="button" class="sb-btn">Limpiar</button>
+  </div>
+</div>
+
+    <div class="sb-card">
+      <div class="sb-card-title">Resumen</div>
+      <div class="sb-stat">Localidades visibles: <span id="statLoc">-</span></div>
+      <div class="sb-stat">Total localidades: <span id="statLocTotal">-</span></div>
+    </div>
+
+    <div class="sb-card">
+      <div class="sb-card-title">Notas</div>
+      <div class="sb-text">
+        Elaborado por Jazmín Vinitsky
+      </div>
+    </div>
+<div id="panelInfo" class="sb-card" style="display:none;">
+  <div class="sb-card-title">Sobre el proyecto</div>
+  <div class="sb-text">
+
+    <p><strong>Este mapa se enmarca en mi proyecto de tesis de Licenciatura en Geografía (Universidad de Buenos Aires), titulado El proceso de problematización social del daño ambiental por agroquímicos en Argentina.</strong></p>
+
+    <p>Se presenta una reconstrucción espacial elaborada a partir de fuentes secundarias, principalmente noticias periodísticas y normativas municipales y provinciales vinculadas al uso y regulación de agroquímicos en el país. Desde el año 2004 (primera noticia online que se halló) hasta Febrero de 2026.</p>
+
+    <p>El mapa no expone las zonas de mayor daño ambiental, sino que constituye una herramienta de análisis para pensar cómo ese daño adquiere visibilidad pública y se regula institucionalmente (o no) a través de su problematización. En este sentido, las noticias y las ordenanzas funcionan como indicadores de problematización social acontecida o aconteciendo, es decir, como registros de momentos en los que un daño es denunciado, discutido, regulado o incorporado a la agenda pública.</p>
+
+    <h4>Construcción de las bases de datos</h4>
+
+    <p>La base de noticias fue construida mediante un proceso sistemático de recopilación, depuración y normalización. Parte del relevamiento se realizó utilizando herramientas automatizadas para la identificación de artículos relevantes, seguidas de una revisión y validación manual.</p>
+
+    <p>El campo “Caso” no reproduce literalmente el título de la noticia original, sino que corresponde a una síntesis normalizada que permite identificar rápidamente la situación reportada sin necesidad de consultar el artículo completo.</p>
+
+    <p>Las bases normalizadas fueron elaboradas a partir de la revisión exhaustiva de boletines oficiales municipales y provinciales, identificando jurisdicciones con y sin ordenanzas específicas sobre la aplicación de agroquímicos.</p>
+
+    <p>Para cada localidad se consignó, cuando corresponde:</p>
+
+    <ul>
+      <li>existencia o no de ordenanza</li>
+      <li>número de ordenanza</li>
+      <li>año de sanción</li>
+      <li>estado de vigencia</li>
+      <li>contenido regulatorio (por ejemplo, distancias de aplicación, gestión de envases, zonas de resguardo)</li>
+      <li>referencia a posibles afectaciones a recursos hídricos</li>
+    </ul>
+
+    <h4>Procesamiento espacial</h4>
+
+    <p>La integración de la información implicó un proceso extenso de normalización territorial, compatibilización de nombres de localidades y vinculación con capas oficiales del Instituto Geográfico Nacional (IGN), utilizadas como base cartográfica para puntos, departamentos y provincias.</p>
+
+    <p>La georreferenciación y las uniones espaciales fueron realizadas en QGIS, permitiendo vincular noticias y normativas a distintas escalas administrativas.</p>
+
+    <h4>Alcances y limitaciones</h4>
+
+    <p>Este mapa no constituye un registro exhaustivo ni una medición directa del daño ambiental. La presencia de mayor cantidad de noticias en una jurisdicción no implica necesariamente mayor magnitud de daño, sino mayor visibilidad pública o conflictividad registrada.</p>
+
+    <p>La visualización debe interpretarse como una herramienta analítica orientada a explorar relaciones entre visibilidad mediática, regulación normativa y distribución espacial de casos reportados.</p>
+
+  </div>
+</div>
+  </aside>
+
+  <main id="main">
+
+  <div id="mapView">
+    <div id="map"></div>
+  </div>
+
+  <div id="tableView" style="display:none;">
+  <div class="tbl-header">
+    <div class="tbl-title">Base de ordenanzas</div>
+
+    <input id="tblSearch" class="tbl-search" type="text" placeholder="Buscar (ej: Rauch, Maipú, 2008, etc)">
+
+    <div class="tbl-nav">
+      <button id="btnTblLeft" type="button">◀</button>
+      <button id="btnTblRight" type="button">▶</button>
+    </div>
+  </div>
+
+  <div id="tblStatus" class="tbl-status">Cargando datos...</div>
+
+  <div id="tblWrap" class="tbl-wrap">
+    <table id="tbl" class="tbl">
+      <thead id="tblHead"></thead>
+      <tbody id="tblBody"></tbody>
+    </table>
+  </div>
+</div>
+</main>
+</div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/L.Control.Layers.Tree.min.js"></script>
+        <script src="js/leaflet-svg-shape-markers.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet.photon.js"></script>
+        <script src="data/ProvinciasCantidaddenoticias_1.js"></script>
+        <script src="data/DepartamentosCantidaddenoticias_2.js"></script>
+        <script src="data/Localidades_3.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString' || e.target.feature.geometry.type === 'MultiLineString') {
+              highlightLayer.setStyle({
+                color: 'rgba(255, 255, 0, 1.00)',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: 'rgba(255, 255, 0, 1.00)',
+                fillOpacity: 1
+              });
+            }
+        }
+        var map = L.map('map', {
+            zoomControl:false, maxZoom:28, minZoom:1
+        }).fitBounds([[-43.87571526668876,-73.6571472501291],[-24.47310581388865,-53.37982999412898]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        // remove popup's row if "visible-with-data"
+        function removeEmptyRowsFromPopupContent(content, feature) {
+         var tempDiv = document.createElement('div');
+         tempDiv.innerHTML = content;
+         var rows = tempDiv.querySelectorAll('tr');
+         for (var i = 0; i < rows.length; i++) {
+             var td = rows[i].querySelector('td.visible-with-data');
+             var key = td ? td.id : '';
+             if (td && td.classList.contains('visible-with-data') && feature.properties[key] == null) {
+                 rows[i].parentNode.removeChild(rows[i]);
+             }
+         }
+         return tempDiv.innerHTML;
+        }
+        // modify popup if contains media
+        function addClassToPopupIfMedia(content, popup) {
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            var imgTd = tempDiv.querySelector('td img');
+            if (imgTd) {
+                var src = imgTd.getAttribute('src');
+                if (/\.(jpg|jpeg|png|gif|bmp|webp|avif)$/i.test(src)) {
+                    popup._contentNode.classList.add('media');
+                    setTimeout(function() {
+                        popup.update();
+                    }, 10);
+                } else if (/\.(mp3|wav|ogg|aac)$/i.test(src)) {
+                    var audio = document.createElement('audio');
+                    audio.controls = true;
+                    audio.src = src;
+                    imgTd.parentNode.replaceChild(audio, imgTd);
+                    popup._contentNode.classList.add('media');
+                    setTimeout(function() {
+                        popup.setContent(tempDiv.innerHTML);
+                        popup.update();
+                    }, 10);
+                } else if (/\.(mp4|webm|ogg|mov)$/i.test(src)) {
+                    var video = document.createElement('video');
+                    video.controls = true;
+                    video.src = src;
+                    video.style.width = "400px";
+                    video.style.height = "300px";
+                    video.style.maxHeight = "60vh";
+                    video.style.maxWidth = "60vw";
+                    imgTd.parentNode.replaceChild(video, imgTd);
+                    popup._contentNode.classList.add('media');
+                    // Aggiorna il popup quando il video carica i metadati
+                    video.addEventListener('loadedmetadata', function() {
+                        popup.update();
+                    });
+                    setTimeout(function() {
+                        popup.setContent(tempDiv.innerHTML);
+                        popup.update();
+                    }, 10);
+                } else {
+                    popup._contentNode.classList.remove('media');
+                }
+            } else {
+                popup._contentNode.classList.remove('media');
+            }
+        }
+        // Quitar título superior del mapa
+var title = new L.Control({'position':'topright'});
+title.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info');
+    this.update();
+    return this._div;
+};
+title.update = function () {
+    this._div.innerHTML = '';
+};
+// title.addTo(map);  // DESACTIVADO
+        var zoomControl = L.control.zoom({
+            position: 'topleft'
+        }).addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_OpenStreetMap_0');
+        map.getPane('pane_OpenStreetMap_0').style.zIndex = 400;
+        var layer_OpenStreetMap_0 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OpenStreetMap_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OpenStreetMap_0;
+        map.addLayer(layer_OpenStreetMap_0);
+       function pop_ProvinciasCantidaddenoticias_1(feature, layer) {
+    layer.on({
+        mouseout: function(e) {
+            for (var i in e.target._eventParents) {
+                if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                    e.target._eventParents[i].resetStyle(e.target);
+                }
+            }
+        },
+        mouseover: highlightFeature,
+    });
+    var popupContent = '<table>\
+            <tr>\
+                <td colspan="2"><strong>Provincia</strong><br />' + (feature.properties['nam'] !== null ? autolinker.link(String(feature.properties['nam']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Cantidad de noticias</th>\
+                <td class="visible-with-data" id="LINK_count">' + (feature.properties['LINK_count'] !== null ? autolinker.link(String(feature.properties['LINK_count']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+        </table>';
+    var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+    layer.on('popupopen', function(e) {
+        addClassToPopupIfMedia(content, e.popup);
+    });
+    layer.bindPopup(content, { maxHeight: 400 });
+}
+        function style_ProvinciasCantidaddenoticias_1_0(feature) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            // Start of if blocks and style check logic
+            if (exp_ProvinciasCantidaddenoticias_1rule0_eval_expression(context)) {
+                  return {
+                pane: 'pane_ProvinciasCantidaddenoticias_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,254,253,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_ProvinciasCantidaddenoticias_1rule1_eval_expression(context)) {
+                  return {
+                pane: 'pane_ProvinciasCantidaddenoticias_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,218,219,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_ProvinciasCantidaddenoticias_1rule2_eval_expression(context)) {
+                  return {
+                pane: 'pane_ProvinciasCantidaddenoticias_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,151,156,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_ProvinciasCantidaddenoticias_1rule3_eval_expression(context)) {
+                  return {
+                pane: 'pane_ProvinciasCantidaddenoticias_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,80,85,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_ProvinciasCantidaddenoticias_1rule4_eval_expression(context)) {
+                  return {
+                pane: 'pane_ProvinciasCantidaddenoticias_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,7,1,1.0)',
+                interactive: true,
+            };
+                }
+            else {
+                return {fill: false, stroke: false};
+            }
+        }
+        map.createPane('pane_ProvinciasCantidaddenoticias_1');
+        map.getPane('pane_ProvinciasCantidaddenoticias_1').style.zIndex = 401;
+        map.getPane('pane_ProvinciasCantidaddenoticias_1').style['mix-blend-mode'] = 'normal';
+        var layer_ProvinciasCantidaddenoticias_1 = new L.geoJson(json_ProvinciasCantidaddenoticias_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ProvinciasCantidaddenoticias_1',
+            layerName: 'layer_ProvinciasCantidaddenoticias_1',
+            pane: 'pane_ProvinciasCantidaddenoticias_1',
+            onEachFeature: pop_ProvinciasCantidaddenoticias_1,
+            style: style_ProvinciasCantidaddenoticias_1_0,
+        });
+        bounds_group.addLayer(layer_ProvinciasCantidaddenoticias_1);
+        map.addLayer(layer_ProvinciasCantidaddenoticias_1);
+        function pop_DepartamentosCantidaddenoticias_2(feature, layer) {
+    layer.on({
+        mouseout: function(e) {
+            for (var i in e.target._eventParents) {
+                if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                    e.target._eventParents[i].resetStyle(e.target);
+                }
+            }
+        },
+        mouseover: highlightFeature,
+    });
+
+    var popupContent = '<table>\
+            <tr>\
+                <td colspan="2"><strong>Departamento</strong><br />' + (feature.properties['nam'] !== null ? autolinker.link(String(feature.properties['nam']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <td colspan="2"><strong>Provincia</strong><br />' + (feature.properties['nam_2'] !== null ? autolinker.link(String(feature.properties['nam_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Cantidad de noticias</th>\
+                <td class="visible-with-data" id="Estadísti">' + (feature.properties['Estadísti'] !== null ? autolinker.link(String(feature.properties['Estadísti']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+        </table>';
+
+    var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+    layer.on('popupopen', function(e) {
+        addClassToPopupIfMedia(content, e.popup);
+    });
+    layer.bindPopup(content, { maxHeight: 400 });
+}
+        function style_DepartamentosCantidaddenoticias_2_0(feature) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            // Start of if blocks and style check logic
+            if (exp_DepartamentosCantidaddenoticias_2rule0_eval_expression(context)) {
+                  return {
+                pane: 'pane_DepartamentosCantidaddenoticias_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_DepartamentosCantidaddenoticias_2rule1_eval_expression(context)) {
+                  return {
+                pane: 'pane_DepartamentosCantidaddenoticias_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,206,207,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_DepartamentosCantidaddenoticias_2rule2_eval_expression(context)) {
+                  return {
+                pane: 'pane_DepartamentosCantidaddenoticias_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,154,143,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_DepartamentosCantidaddenoticias_2rule3_eval_expression(context)) {
+                  return {
+                pane: 'pane_DepartamentosCantidaddenoticias_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,94,105,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_DepartamentosCantidaddenoticias_2rule4_eval_expression(context)) {
+                  return {
+                pane: 'pane_DepartamentosCantidaddenoticias_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,50,57,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_DepartamentosCantidaddenoticias_2rule5_eval_expression(context)) {
+                  return {
+                pane: 'pane_DepartamentosCantidaddenoticias_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(183,41,46,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_DepartamentosCantidaddenoticias_2rule6_eval_expression(context)) {
+                  return {
+                pane: 'pane_DepartamentosCantidaddenoticias_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(131,1,1,1.0)',
+                interactive: true,
+            };
+                }
+            else {
+                return {fill: false, stroke: false};
+            }
+        }
+        map.createPane('pane_DepartamentosCantidaddenoticias_2');
+        map.getPane('pane_DepartamentosCantidaddenoticias_2').style.zIndex = 402;
+        map.getPane('pane_DepartamentosCantidaddenoticias_2').style['mix-blend-mode'] = 'normal';
+        var layer_DepartamentosCantidaddenoticias_2 = new L.geoJson(json_DepartamentosCantidaddenoticias_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_DepartamentosCantidaddenoticias_2',
+            layerName: 'layer_DepartamentosCantidaddenoticias_2',
+            pane: 'pane_DepartamentosCantidaddenoticias_2',
+            onEachFeature: pop_DepartamentosCantidaddenoticias_2,
+            style: style_DepartamentosCantidaddenoticias_2_0,
+        });
+        bounds_group.addLayer(layer_DepartamentosCantidaddenoticias_2);
+        map.addLayer(layer_DepartamentosCantidaddenoticias_2);
+        function pop_Localidades_3(feature, layer) {
+    layer.on({
+        mouseout: function(e) {
+            for (var i in e.target._eventParents) {
+                if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                    e.target._eventParents[i].resetStyle(e.target);
+                }
+            }
+        },
+        mouseover: highlightFeature,
+    });
+    var popupContent = '<table>\
+            <tr>\
+                <th scope="row">Link</th>\
+                <td class="visible-with-data" id="link">' + (feature.properties['link'] !== null ? autolinker.link(String(feature.properties['link']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Caso</th>\
+                <td class="visible-with-data" id="caso">' + (feature.properties['caso'] !== null ? autolinker.link(String(feature.properties['caso']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Año</th>\
+                <td class="visible-with-data" id="anio">' + (feature.properties['anio'] !== null ? autolinker.link(String(feature.properties['anio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Fuente</th>\
+                <td class="visible-with-data" id="fuente">' + (feature.properties['fuente'] !== null ? autolinker.link(String(feature.properties['fuente']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Localidad</th>\
+                <td class="visible-with-data" id="ubicacion">' + (feature.properties['ubicacion'] !== null ? autolinker.link(String(feature.properties['ubicacion']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Departamento</th>\
+                <td class="visible-with-data" id="departamen">' + (feature.properties['departamen'] !== null ? autolinker.link(String(feature.properties['departamen']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Provincia</th>\
+                <td class="visible-with-data" id="provincia">' + (feature.properties['provincia'] !== null ? autolinker.link(String(feature.properties['provincia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Ordenanza</th>\
+                <td class="visible-with-data" id="ordenanza">' + (feature.properties['ordenanza'] !== null ? autolinker.link(String(feature.properties['ordenanza']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Numero</th>\
+                <td class="visible-with-data" id="numero">' + (feature.properties['numero'] !== null ? autolinker.link(String(feature.properties['numero']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Año de sancion</th>\
+                <td class="visible-with-data" id="anio_sanci">' + (feature.properties['anio_sanci'] !== null ? autolinker.link(String(feature.properties['anio_sanci']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Vigencia</th>\
+                <td class="visible-with-data" id="vigencia">' + (feature.properties['vigencia'] !== null ? autolinker.link(String(feature.properties['vigencia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Contenido</th>\
+                <td class="visible-with-data" id="contenido">' + (feature.properties['contenido'] !== null ? autolinker.link(String(feature.properties['contenido']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Modalidad</th>\
+                <td class="visible-with-data" id="MODALIDAD">' + (feature.properties['MODALIDAD'] !== null ? autolinker.link(String(feature.properties['MODALIDAD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+            <tr>\
+                <th scope="row">Agua Afectada</th>\
+                <td class="visible-with-data" id="AGUA_AFECT">' + (feature.properties['AGUA_AFECT'] !== null ? autolinker.link(String(feature.properties['AGUA_AFECT']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+            </tr>\
+        </table>';
+    var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+    layer.on('popupopen', function(e) {
+        addClassToPopupIfMedia(content, e.popup);
+    });
+    layer.bindPopup(content, { maxHeight: 400 });
+}
+
+        function style_Localidades_3_0() {
+            return {
+                pane: 'pane_Localidades_3',
+                shape: 'diamond',
+                radius: 6.8,
+                opacity: 1,
+                color: 'rgba(128,17,25,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,30,42,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Localidades_3');
+        map.getPane('pane_Localidades_3').style.zIndex = 403;
+        map.getPane('pane_Localidades_3').style['mix-blend-mode'] = 'normal';
+        var layer_Localidades_3 = new L.geoJson(json_Localidades_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Localidades_3',
+            layerName: 'layer_Localidades_3',
+            pane: 'pane_Localidades_3',
+            onEachFeature: pop_Localidades_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.shapeMarker(latlng, style_Localidades_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Localidades_3);
+        map.addLayer(layer_Localidades_3);
+var overlaysTree = [
+            {label: '<img src="legend/Localidades_3.png" /> Localidades con noticia', layer: layer_Localidades_3},
+            {label: 'Departamentos (Cantidad de noticias)<br /><table><tr><td style="text-align: center;"><img src="legend/DepartamentosCantidaddenoticias_2_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/DepartamentosCantidaddenoticias_2_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/DepartamentosCantidaddenoticias_2_232.png" /></td><td>2 - 3</td></tr><tr><td style="text-align: center;"><img src="legend/DepartamentosCantidaddenoticias_2_453.png" /></td><td>4 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/DepartamentosCantidaddenoticias_2_674.png" /></td><td>6 - 7</td></tr><tr><td style="text-align: center;"><img src="legend/DepartamentosCantidaddenoticias_2_895.png" /></td><td>8 - 9</td></tr><tr><td style="text-align: center;"><img src="legend/DepartamentosCantidaddenoticias_2_106.png" /></td><td>10</td></tr></table>', layer: layer_DepartamentosCantidaddenoticias_2},
+            {label: 'Provincias (Cantidad de noticias)<br /><table><tr><td style="text-align: center;"><img src="legend/ProvinciasCantidaddenoticias_1_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/ProvinciasCantidaddenoticias_1_151.png" /></td><td>1 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/ProvinciasCantidaddenoticias_1_6152.png" /></td><td>6 - 15</td></tr><tr><td style="text-align: center;"><img src="legend/ProvinciasCantidaddenoticias_1_16403.png" /></td><td>16 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/ProvinciasCantidaddenoticias_1_411194.png" /></td><td>41 - 119</td></tr></table>', layer: layer_ProvinciasCantidaddenoticias_1},
+            {label: "Open Street Map", layer: layer_OpenStreetMap_0, radioGroup: 'bm' },]
+        var lay = L.control.layers.tree(null, overlaysTree,{
+            //namedToggle: true,
+            //selectorBack: false,
+            //closedSymbol: '&#8862; &#x1f5c0;',
+            //openedSymbol: '&#8863; &#x1f5c1;',
+            //collapseAll: 'Collapse all',
+            //expandAll: 'Expand all',
+            collapsed: false, 
+        });
+        lay.addTo(map);
+		document.addEventListener("DOMContentLoaded", function() {
+            // set new Layers List height which considers toggle icon
+            function newLayersListHeight() {
+                var layerScrollbarElement = document.querySelector('.leaflet-control-layers-scrollbar');
+                if (layerScrollbarElement) {
+                    var layersListElement = document.querySelector('.leaflet-control-layers-list');
+                    var originalHeight = layersListElement.style.height 
+                        || window.getComputedStyle(layersListElement).height;
+                    var newHeight = parseFloat(originalHeight) - 50;
+                    layersListElement.style.height = newHeight + 'px';
+                }
+            }
+            var isLayersListExpanded = true;
+            var controlLayersElement = document.querySelector('.leaflet-control-layers');
+            var toggleLayerControl = document.querySelector('.leaflet-control-layers-toggle');
+            // toggle Collapsed/Expanded and apply new Layers List height
+            toggleLayerControl.addEventListener('click', function() {
+                if (isLayersListExpanded) {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                } else {
+                    controlLayersElement.classList.add('leaflet-control-layers-expanded');
+                }
+                isLayersListExpanded = !isLayersListExpanded;
+                newLayersListHeight()
+            });	
+			// apply new Layers List height if toggle layerstree
+			if (controlLayersElement) {
+				controlLayersElement.addEventListener('click', function(event) {
+					var toggleLayerHeaderPointer = event.target.closest('.leaflet-layerstree-header-pointer span');
+					if (toggleLayerHeaderPointer) {
+						newLayersListHeight();
+					}
+				});
+			}
+            // Collapsed/Expanded at Start to apply new height
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            // Collapsed touch/small screen
+            var isSmallScreen = window.innerWidth < 650;
+            if (isSmallScreen) {
+                setTimeout(function() {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                    isLayersListExpanded = !isLayersListExpanded;
+                }, 500);
+            }  
+        });       
+        setBounds();
+        </script><script>
+(function () {
+  function normalizeYesNo(v) {
+    if (v === null || v === undefined) return "";
+    const s = String(v).trim().toLowerCase();
+    if (s === "si" || s === "sí") return "Sí";
+    if (s === "no") return "No";
+    return String(v).trim();
+  }
+
+  function safeFeatures() {
+    if (typeof json_Localidades_3 === "undefined") return [];
+    if (!json_Localidades_3 || !Array.isArray(json_Localidades_3.features)) return [];
+    return json_Localidades_3.features;
+  }
+
+  function init() {
+    // chequeos básicos
+    if (typeof layer_Localidades_3 === "undefined") return;
+    if (!document.getElementById("fYear")) return;
+    if (!document.getElementById("fOrd")) return;
+    if (!document.getElementById("btnClear")) return;
+
+    const allFeatures = safeFeatures();
+
+    const selYear = document.getElementById("fYear");
+    const selOrd = document.getElementById("fOrd");
+    const btnClear = document.getElementById("btnClear");
+
+    // llenar años (dejar "Todos" y agregar el resto)
+    const years = Array.from(new Set(
+      allFeatures
+        .map(f => (f.properties ? f.properties["anio"] : null))
+        .filter(v => v !== null && v !== undefined && String(v).trim() !== "")
+        .map(v => String(v).trim())
+    )).sort((a,b) => Number(a) - Number(b));
+
+    years.forEach(y => {
+      const opt = document.createElement("option");
+      opt.value = y;
+      opt.textContent = y;
+      selYear.appendChild(opt);
+    });
+
+    function applyFilters() {
+      const y = selYear.value;
+      const o = selOrd.value;
+
+      const filtered = allFeatures.filter(f => {
+        const p = f.properties || {};
+        const fy = p["anio"] !== null && p["anio"] !== undefined ? String(p["anio"]).trim() : "";
+        const fo = normalizeYesNo(p["ordenanza"]);
+
+        if (y && fy !== y) return false;
+        if (o && fo !== o) return false;
+        return true;
+      });
+
+      // filtra la capa real de QGIS2Web
+      layer_Localidades_3.clearLayers();
+      layer_Localidades_3.addData({ type: "FeatureCollection", features: filtered });
+
+      const a = document.getElementById("statLoc");
+      const b = document.getElementById("statLocTotal");
+      if (a) a.textContent = String(filtered.length);
+      if (b) b.textContent = String(allFeatures.length);
+    }
+
+    selYear.addEventListener("change", applyFilters);
+    selOrd.addEventListener("change", applyFilters);
+    btnClear.addEventListener("click", function () {
+      selYear.value = "";
+      selOrd.value = "";
+      applyFilters();
+    });
+
+    applyFilters();
+  }
+
+  // esperar a que todo exista
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script> 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btnFilters = document.getElementById("btnFilters");
+  const btnLayers  = document.getElementById("btnLayers");
+  const btnInfo    = document.getElementById("btnInfo");
+
+  const panelFilters = document.getElementById("panelFilters");
+  const panelInfo    = document.getElementById("panelInfo");
+
+  function toggle(el, btn){
+    if(!el) return;
+    const hidden = (el.style.display === "none");
+    el.style.display = hidden ? "" : "none";
+    if(btn) btn.classList.toggle("active", hidden);
+  }
+
+  if(btnFilters) btnFilters.classList.add("active");
+
+  btnFilters?.addEventListener("click", () => toggle(panelFilters, btnFilters));
+  btnInfo?.addEventListener("click", () => toggle(panelInfo, btnInfo));
+
+  btnLayers?.addEventListener("click", () => {
+    const layersToggle = document.querySelector(".leaflet-control-layers-toggle");
+    if(layersToggle) layersToggle.click();
+    btnLayers.classList.toggle("active");
+  });
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Botón y vistas
+  const btnTable = document.getElementById("btnTable");
+  const mapView = document.getElementById("mapView");
+  const tableView = document.getElementById("tableView");
+
+  // Tabla
+  const tblHead = document.getElementById("tblHead");
+  const tblBody = document.getElementById("tblBody");
+  const tblSearch = document.getElementById("tblSearch");
+  const tblStatus = document.getElementById("tblStatus");
+
+  let rows = [];
+  let headers = [];
+
+  function parseCSV(text){
+    // Parser simple y bastante robusto (maneja comillas)
+    const out = [];
+    let row = [];
+    let cur = "";
+    let inQuotes = false;
+
+    for(let i=0;i<text.length;i++){
+      const c = text[i];
+      const n = text[i+1];
+
+      if(c === '"' ){
+        if(inQuotes && n === '"'){ cur += '"'; i++; }
+        else inQuotes = !inQuotes;
+      } else if(c === ';' && !inQuotes){
+        row.push(cur); cur = "";
+      } else if((c === '\n' || c === '\r') && !inQuotes){
+        if(c === '\r' && n === '\n') i++;
+        row.push(cur); cur = "";
+        if(row.length > 1 || row[0] !== "") out.push(row);
+        row = [];
+      } else {
+        cur += c;
+      }
+    }
+    if(cur.length || row.length){
+      row.push(cur);
+      out.push(row);
+    }
+    return out;
+  }
+
+  function renderTable(filterText){
+    const q = (filterText || "").trim().toLowerCase();
+
+    const filtered = q
+      ? rows.filter(r => r.join(" ").toLowerCase().includes(q))
+      : rows;
+
+    // head
+    tblHead.innerHTML = "<tr>" + headers.map(h => `<th>${h}</th>`).join("") + "</tr>";
+
+    // body (limit para que no explote si es enorme)
+   const shown = filtered;
+
+    tblBody.innerHTML = shown.map(r =>
+      "<tr>" + r.map(v => `<td>${(v ?? "").replaceAll("<","&lt;").replaceAll(">","&gt;")}</td>`).join("") + "</tr>"
+    ).join("");
+
+    tblStatus.textContent = `Mostrando ${shown.length} de ${filtered.length} registros`;
+  }
+
+  async function loadCSV(){
+    try{
+      const url = "ORDENANZAS_TODOELPAIS.csv?v=" + Date.now();
+const res = await fetch(url);
+      if(!res.ok) throw new Error("No se pudo cargar el CSV");
+      const text = await res.text();
+
+      const data = parseCSV(text);
+      headers = data[0];
+      rows = data.slice(1);
+
+      renderTable("");
+      tblSearch.addEventListener("input", () => renderTable(tblSearch.value));
+   }catch(e){
+  console.error(e);
+  tblStatus.textContent = "ERROR: " + (e && e.message ? e.message : String(e));
+}
+  }
+
+  // Toggle Mapa/Tabla
+  btnTable?.addEventListener("click", () => {
+    const showingTable = tableView.style.display !== "none";
+    if(showingTable){
+      tableView.style.display = "none";
+      mapView.style.display = "";
+      btnTable.classList.remove("active");
+    } else {
+      mapView.style.display = "none";
+      tableView.style.display = "";
+      btnTable.classList.add("active");
+      if(rows.length === 0) loadCSV();
+    }
+  });
+// Botones ◀ ▶ para mover la tabla (sin depender de la barrita)
+const tblWrap = document.getElementById("tblWrap");
+const btnTblLeft = document.getElementById("btnTblLeft");
+const btnTblRight = document.getElementById("btnTblRight");
+
+if(tblWrap && btnTblLeft && btnTblRight){
+  btnTblLeft.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    tblWrap.scrollLeft = Math.max(0, tblWrap.scrollLeft - 700);
+  });
+
+  btnTblRight.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    tblWrap.scrollLeft = tblWrap.scrollLeft + 700;
+  });
+}
+
+
+});
+</script> 
+      
+    </body>
+</html>

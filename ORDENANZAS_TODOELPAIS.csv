@@ -1,0 +1,196 @@
+﻿PARTIDO;PROVINCIA;"¿Tiene ordenanza específica sobre agroquímicos?
+(Sí/No)";Número de Ordenanza;Año de Sancion;"Vigencia
+(Vigente / Derogada / Suspendida / No reglamentada / Parcialmente suspendida)";"Marco regulatorio aplicable
+(Ordenanza municipal / Ley provincial 10.699 / Mixto / Solo cautelar judicial / Sin regulación específica)";"Tipo de contenido principal
+(Regula distancias / Crea registro Regula envases / residuos / Regula transporte / Prohibición puntual / Adhesión provincial / Integral)";Exclusión terrestre urbana (m);¿Prohibición total terrestre en área urbana? (Sí/No);Amortiguamiento terrestre urbana (m);Exclusión aérea urbana (m);Amortiguamiento aérea urbana (m);Exclusión escuelas rurales terrestre (m);Exclusión escuelas rurales aérea (m);Exclusión cursos de agua terrestre (m);Exclusión cursos de agua aérea (m);Exige receta agronómica;Crea registro municipal de aplicadores;Exige aviso previo a municipio;Exige notificación a escuelas;Exige presencia de ingeniero agrónomo;Limita por banda toxicológica;Prohíbe aplicación aérea totalmente;Establece restricciones horarias escolares;Establece protección específica de agua más allá de distancia;Existencia de medida judicial vinculada (Sí/No);Artículos suspendidos judicialmente (Sí/No);Proceso de reforma o debate en curso (Sí/No);"Observaciones 
+(Cautelar vigente / Ordenanza no reglamentada  / En revisión / Conflicto vecinal activo / Adhesión sin implementación)"
+25 de Mayo;Buenos Aires;Sí;3340/2018;2018;Vigente;Ordenanza municipal + Ley provincial;Integral;NA;Sí;100;150;NA;60;150;NA;NA;No;Sí;Sí;Sí;No;No;No;Sí;Sí;No;No;No;Franja hídrica a reglamentar
+9 de Julio;Buenos Aires;Sí;7219/2024;2024;Vigente;Ordenanza municipal + cautelar judicial;Integral;200;No;200;2000;NA;200;2000;NA;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;No;Sí;No;No;Cautelar French 1095 m
+Adolfo Alsina;Buenos Aires;Sí;3840/2014;2014;Vigente;Ordenanza municipal;Integral técnico;NA;No;100;NA;200;100;NA;NA;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;Sí;No;No;No;Distancias diferenciadas para agua y caminos
+Adolfo Gonzales Chaves;Buenos Aires;Sí;1156/1986;1986;Vigente;Ordenanza municipal;Registro administrativo;NA;No;NA;NA;NA;NA;NA;NA;NA;No;Sí;No;No;No;No;No;No;No;No;No;No;Regulación administrativa sin distancias
+Alberti;Buenos Aires;Sí;1690/2008;2008;Vigente;Ordenanza municipal;Distancia única;1000;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Zona ecológica protegida 1000 m
+Almirante Brown;Buenos Aires;Sí;9140/2009;2009;Vigente;Ordenanza municipal;Prohibición puntual;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Prohibición de aplicación para eliminación de pastizales
+Arrecifes;Buenos Aires;Sí;2786/2016;2016;Vigente;Ordenanza municipal + Ley provincial;Integral;300;No;1200;2000;NA;300;2000;NA;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;Sí;No;No;No;Prohíbe banda roja y ciertos principios activos
+Avellaneda;Buenos Aires;No;NA;NA;NA;Ley provincial 10.699;NA;NA;No;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;Se rige exclusivamente por normativa provincial
+Ayacucho;Buenos Aires;Sí;5528/2020;2020;Vigente;Ordenanza municipal;Integral;NA;No;400;NA;NA;100;500;25;400;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;Sí;No;No;No;Permite ajustes técnicos excepcionales
+Azul;Buenos Aires;Sí;4564;2021;Vigente;Ordenanza municipal;Integral técnico;NA;No;200;NA;NA;NA;NA;20;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;No;Sí;No;No;No;Exclusión total urbana y áreas sensibles
+Bahía Blanca;Buenos Aires;Sí;5441;NA;Vigente;Adhesión a Ley provincial 10.699;Adhesión sin distancias propias;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Remite íntegramente a normativa provincial
+Balcarce;Buenos Aires;No;NA;NA;NA;Ley provincial 10.699;NA;NA;No;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;Proyecto 2024 sin sanción vigente
+Baradero;Buenos Aires;Sí;6483/2018;2018;Vigente;Ordenanza municipal;Integral;200;No;NA;2000;NA;200;2000;NA;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;No;No;No;No;Exige receta agronómica y tecnología antideriva
+Benito Juárez;Buenos Aires;Sí;5542/2020;2020;Vigente;Ordenanza municipal;Integral con zona verde;NA;No;NA;2000;NA;500;2000;50;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;Sí;No;No;No;Zona Verde de exclusión amplia
+Berazategui;Buenos Aires;No;NA;NA;NA;Ley provincial 10.699;NA;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Sin ordenanza municipal específica identificada
+Berisso;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;Sin regulación específica;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;No se identificó ordenanza sustantiva sobre distancias o regulación técnica
+Bolívar;Buenos Aires;Sí;2459/2017 y 2999/2024;2017 y 2024;Parcialmente suspendida;Mixto;Integral;1000;No;1000;2000;NA;1000;2000;NA;NA;Sí;No;Sí;No;No;No;No;No;Sí;No;No;Sí;Suspensión transitoria art. 6, excepto área urbana de San Carlos de Bolívar, aérea sujeta a ley provincial, observatorio técnico en curso
+Bragado;Buenos Aires;Sí;3706/09 y 4846/16;2009;Vigente;Ordenanza municipal;Integral;2000;Sí;NA;2000;NA;50;NA;NA;NA;Sí;No;No;No;Sí;No;No;No;No;No;No;No;Cinturón de Protección Ecológica 2000 m, modificatoria sobre sanciones
+Brandsen;Buenos Aires;No;NA;NA;NA;Ley provincial 10.699;NA;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Sin ordenanza municipal específica identificada
+Campana;Buenos Aires;Sí;5792/11;2011;Vigente;Ordenanza municipal;Integral;1000;Sí;NA;NA;NA;1000;NA;50;NA;Sí;No;Sí;No;No;Sí;No;No;Sí;No;No;No;Aérea prohibida en territorio continental, en islas solo Clase IV, cursos menores cuatro veces el ancho
+Cañuelas;Buenos Aires;Sí;2671/10;2010;Vigente;Ordenanza municipal;Integral;2000;Sí;NA;NA;NA;200;NA;NA;NA;No;No;No;Sí;No;No;Sí;Sí;No;No;No;No;Aérea prohibida en todo el partido, escuelas rurales fuera de horario escolar con aviso
+Capitán Sarmiento;Buenos Aires;Sí;1672/2009;2009;Vigente;Ordenanza municipal;Regula distancias;50;Sí;450;2000;NA;NA;NA;NA;NA;No;No;Sí;No;No;Sí;No;No;No;No;No;No;Esquema escalonado 50 a 150 a 500, aérea 2000 ampliable 3000, declaración jurada 48 h
+Carlos Casares;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Carlos Tejedor;Buenos Aires;Sí;2350/14;2014;Vigente;Ordenanza municipal;Regula distancias;300;No;700;2000;NA;NA;NA;NA;NA;No;Sí;No;No;No;No;No;No;No;No;No;No;NA
+Carmen de Areco;Buenos Aires;Sí;2960/18;2018;Vigente;Ordenanza municipal;Integral;NA;No;100;NA;200;50;100;30;NA;No;Sí;No;No;No;No;No;No;Sí;No;No;No;NA
+Carmen de Patagones;Buenos Aires;Sí;1185/12;2012;Vigente;Mixto;Adhesión provincial;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión sin implementación
+Castelli;Buenos Aires;Sí;041/20;2020;Vigente;Ordenanza municipal;Prohibición puntual;1000;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;Sí;No;No;No;Protección específica Parque Laguna La Rosita
+Chacabuco;Buenos Aires;Sí;7077/17;2017;Vigente;Ordenanza municipal;Regula distancias;NA;Sí;300;NA;NA;300;NA;30;NA;No;No;Sí;No;Sí;Sí;No;Sí;Sí;No;No;No;NA
+Chascomús;Buenos Aires;Sí;5329/2018;2018;Vigente;Ordenanza municipal;Integral;750;No;1000;NA;NA;1000;NA;50;NA;No;Sí;Sí;No;Sí;Sí;No;Sí;Sí;No;No;No;NA
+Chivilcoy;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Colón;Buenos Aires;Sí;4007/2020;2020;Vigente;Ordenanza municipal;Integral;NA;Sí;500;2000;NA;100;1000;50;300;No;Sí;No;No;No;Sí;No;No;No;No;No;No;NA
+Coronel Dorrego;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Coronel Pringles;Buenos Aires;Sí;4081/13-4240/16;2013;Vigente;Ordenanza municipal;Regula distancias;NA;Sí;2000;NA;NA;NA;NA;50;NA;No;No;No;No;Sí;Sí;No;No;Sí;No;No;No;NA
+Coronel Rosales;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Coronel Suárez;Buenos Aires;Sí;7404/20-7434/20;2020;Vigente;Ordenanza municipal;Integral;NA;Sí;1000;2000;1000;NA;NA;25;200;No;Sí;Sí;No;No;Sí;No;No;No;No;No;No;NA
+Daireaux;Buenos Aires;Sí;2383/2020;2020;Vigente;Ordenanza municipal;Integral;NA;No;NA;2000;NA;NA;NA;NA;NA;No;No;Sí;No;Sí;Sí;No;Sí;No;No;No;No;NA
+Dolores;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Ensenada;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Escobar;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Esteban Echeverría;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;Sin regulación específica;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Rige Ley Provincial 10.699 y Decreto 499/91
+Exaltación de la Cruz;Buenos Aires;Sí;101/12-496/19-2557/19;2012;Vigente;Ordenanza municipal;Integral;150;No;1000;NA;NA;300;NA;150;NA;No;Sí;Sí;No;No;Sí;Sí;No;Sí;No;No;No;NA
+Ezeiza;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Florencio Varela;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Florentino Ameghino;Buenos Aires;Sí;736/10;2010;Vigente;Ordenanza municipal;Regula distancias;NA;Sí;100;1500;NA;100;NA;NA;NA;Sí;No;No;No;Sí;No;No;Sí;No;No;No;No;NA
+General Alvarado;Buenos Aires;Sí;217/09;2009;Vigente;Ordenanza municipal;Regula distancias;200;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;Sí;No;No;No;No;NA
+General Alvear;Buenos Aires;Sí;1669/2011;2011;Vigente;Ordenanza municipal;Regula distancias;100;No;NA;5000;NA;100;NA;20;NA;No;No;Sí;No;No;No;No;No;No;No;No;No;NA
+General Arenales;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+General Belgrano;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+General Guido;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+General La Madrid;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+General Las Heras;Buenos Aires;Sí;69/10;2010;No reglamentada;Ordenanza municipal;Regula distancias;2000;No;NA;NA;NA;200;NA;35;NA;No;No;Sí;No;No;No;Sí;Sí;No;No;No;No;Ordenanza no reglamentada
+General Lavalle;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+General Madariaga;Buenos Aires;Sí;1732/07;2007;Vigente;Ordenanza municipal;Regula distancias;NA;Sí;500;2000;NA;250;NA;NA;NA;Sí;No;Sí;No;No;No;No;No;Sí;No;No;No;NA
+General Paz;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+General Pinto;Buenos Aires;Sí;4115/14;2014;Vigente;Ordenanza municipal;Integral;500;No;NA;NA;NA;100;NA;100;NA;No;Sí;Sí;No;No;No;No;No;Sí;No;No;No;NA
+General Pueyrredón;Buenos Aires;Sí;18740/2008;2008;Vigente;Ordenanza municipal;Prohibición puntual;1000;No;NA;1000;NA;NA;NA;NA;NA;No;No;No;No;No;No;Sí;No;No;Sí;Sí;No;Cautelar vigente
+General Rodríguez;Buenos Aires;Sí;5163/22;2022;Vigente;Ordenanza municipal;Integral;100;No;2000;NA;NA;NA;NA;NA;NA;Sí;Sí;Sí;No;Sí;Sí;No;Sí;No;No;No;No;NA
+General San Martín;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+General Viamonte;Buenos Aires;Sí;3150/15;2015;Vigente;Ordenanza municipal;Integral;300;No;2000;2000;NA;50;NA;20;200;No;No;Sí;Sí;Sí;Sí;No;Sí;No;No;No;No;NA
+General Villegas;Buenos Aires;Sí;6124/2020;2020;Vigente;Ordenanza municipal;Integral;40;No;NA;NA;NA;NA;NA;40;NA;No;Sí;Sí;No;No;Sí;No;Sí;Sí;No;No;No;NA
+Guaminí;Buenos Aires;Sí;13/16;2016;Vigente;Ordenanza municipal;Integral;300;No;700;2000;NA;100;NA;25;50;No;No;Sí;Sí;No;Sí;No;Sí;No;No;No;No;NA
+Hipólito Yrigoyen;Buenos Aires;Sí;96/13;2013;Vigente;Ordenanza municipal;Integral;100;No;NA;2000;NA;NA;NA;NA;NA;No;Sí;Sí;No;Sí;Sí;No;Sí;No;No;No;No;NA
+Hurlingham;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Ituzaingó;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+José C. Paz;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Junín;Buenos Aires;Sí;6425/13;2013;Vigente;Ordenanza municipal;Integral;500;No;NA;NA;NA;300;NA;25;525;No;Sí;Sí;No;No;Sí;No;Sí;No;No;No;No;NA
+La Costa;Buenos Aires;No;NA;NA;NA;NA;NA;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Rige Ley Provincial 10.699 y Dec. 499/91.
+La Matanza;Buenos Aires;Sí;13.996/2022;2022;Vigente;Ordenanza municipal;Integral;1100;Sí;NA;0;NA;1100;1100;1100;1100;Sí;Sí;Sí;Sí;Sí;No;Sí;Sí;Sí;No;No;No;Prohibición total aérea y exclusión terrestre hasta 1100 m desde límite urbano, cursos de agua, pozos y escuelas. Escudo Verde Agroecológico.
+Lanús;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;Sin regulación específica;NA;No;NA;NA;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Rige Ley Provincial 10.699 y Decreto 499/91.
+La Plata;Buenos Aires;Sí;7541/90;1990;Vigente;Ordenanza municipal;Crea registro;300;No;NA;NA;NA;NA;NA;NA;NA;No;Sí;No;No;Sí;No;No;Sí;No;No;No;No;NA
+Laprida;Buenos Aires;Sí;1824/12;2012;Vigente;Ordenanza municipal;Regula transporte;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;NA
+Las Flores;Buenos Aires;Sí;2402/10;2010;Vigente;Ordenanza municipal;Integral;500;No;NA;2000;NA;250;NA;20;NA;No;Sí;Sí;No;No;Sí;No;Sí;No;No;No;No;NA
+Leandro N. Alem;Buenos Aires;Sí;1166/06;2006;Vigente;Ordenanza municipal;Regula distancias;500;No;1000;1500;NA;NA;NA;NA;NA;No;No;Sí;No;No;No;Sí;No;No;No;No;No;NA
+Lezama;Buenos Aires;No;NA;NA;NA;NA;NA;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Rige Ley Provincial 10.699 y Dec. 499/91.
+Lincoln;Buenos Aires;Sí;2535/19;2019;Vigente;Ordenanza municipal;Integral;500;No;500;NA;NA;300;NA;NA;NA;No;Sí;Sí;No;No;Sí;No;No;Sí;No;No;No;NA
+Lobería;Buenos Aires;No;NA;NA;NA;Sin regulación específica;NA;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Rige Ley Provincial 10.699 y Dec. 499/91.  reclamos locales sin normativa sancionada.
+Lobos;Buenos Aires;No;NA;NA;NA;NA;NA;NA;No;NA;NA;NA;50;2000;50;NA;Sí;No;Sí;Sí;Sí;Sí;No;Sí;Sí;No;No;Sí;Proyecto de ordenanza presentado por Sociedad Rural en 2021, sin constancia de sanción.
+Lomas de Zamora;Buenos Aires;Sí;12923;NA;Vigente;Ordenanza municipal;Prohibición puntual;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Prohibición total de glifosato, derivados y coadyuvantes en todo el territorio municipal
+Luján;Buenos Aires;Sí;5953/2011;2011;Vigente;Ordenanza municipal;Integral;500;No;NA;NA;NA;100;NA;100;NA;No;No;Sí;Sí;No;No;Sí;Sí;No;No;No;No;NA
+Magdalena;Buenos Aires;No;NA;NA;NA;NA;Proyecto en debate;100;No;NA;200;NA;100;200;NA;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;Sí;No;No;Sí;Proyecto de ordenanza ingresado en 2025 tras episodio en Arditi. No hay ordenanza vigente al momento del relevamiento.
+Maipú;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;Sin regulación específica;NA;No;NA;NA;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Rige Ley Provincial 10.699 y Decreto 499/91.
+Malvinas Argentinas;Buenos Aires;Sí;459/2005-640/2009;2009;Vigente;Ordenanza municipal;Integral;150;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;NA
+Mar Chiquita;Buenos Aires;Sí;19/20;2020;Vigente;Ordenanza municipal;Integral;150;No;500;2000;NA;200;300;25;NA;No;Sí;Sí;Sí;No;No;No;Sí;Sí;No;No;No;NA
+Marcos Paz;Buenos Aires;Sí;44/2012;2012;Vigente;Ordenanza municipal;Regula distancias;NA;No;NA;NA;NA;1000;NA;NA;NA;No;Sí;No;No;No;No;Sí;No;No;No;No;No;NA
+Mercedes;Buenos Aires;Sí;6998/2011-7217/2013;2011;Vigente;Ordenanza municipal;Integral;500;No;NA;2000;NA;100;NA;100;NA;No;No;Sí;No;No;No;No;Sí;No;No;No;No;NA
+Merlo;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Monte Hermoso;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Moreno;Buenos Aires;Sí;6422/20;2020;Vigente;Ordenanza municipal;Prohibición puntual;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;NA
+Morón;Buenos Aires;Sí;11990/09;2009;Vigente;Ordenanza municipal;Prohibición puntual;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;NA
+Navarro;Buenos Aires;Sí;1281/12;2012;Vigente;Ordenanza municipal;Integral;300;No;NA;5000;NA;100;NA;50;NA;No;Sí;Sí;No;No;No;Sí;No;No;No;No;No;NA
+Necochea;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Depósito sin distancias (Ord. 7069/10)
+Olavarría;Buenos Aires;Sí;3651/14;2014;Vigente;Ordenanza municipal;Regula distancias;NA;No;NA;NA;NA;100;500;25;50;No;No;Sí;No;No;No;No;Sí;Sí;No;No;No;NA
+Pehuajó;Buenos Aires;Sí;97/24;2024;Vigente;Ordenanza municipal;Integral;150;No;1000;2000;NA;150;NA;50;NA;No;Sí;Sí;No;No;Sí;No;No;No;Sí;No;No;Deroga 82/06,  radios diferenciados por banda, con Dec. 930/2024
+Pellegrini;Buenos Aires;Sí;1185/2013;2013;Vigente;Ordenanza municipal;Integral;NA;Sí;NA;2000;NA;200;NA;NA;NA;Sí;No;Sí;No;No;Sí;No;No;No;No;No;No;NA
+Pergamino;Buenos Aires;Sí;8126/14;2014;Vigente;Mixto;Integral;1095;No;500;3000;NA;1095;3000;NA;NA;Sí;No;Sí;No;Sí;Sí;No;No;Sí;Sí;Sí;No;Cautelar vigente 2019 amplía distancias,  escuelas tratadas como área urbana
+Pila;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Pilar;Buenos Aires;No;NA;NA;Vigente;Solo cautelar judicial;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;Sí;No;Sí;Cautelar 2022/2023 fija 1000 m viviendas en Larena Country Club, exhorta a legislar
+Pinamar;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Presidente Perón;Buenos Aires;Sí;708/10;2010;Vigente;Mixto;Integral;500;No;NA;NA;NA;500;NA;20;NA;No;Sí;Sí;No;No;No;Sí;No;No;No;No;No;NA
+Puan;Buenos Aires;Sí;4439/08;2008;Vigente;Ordenanza municipal;Regula distancias;300;No;NA;2000;1000;NA;NA;NA;NA;No;No;No;No;No;No;No;Sí;No;No;No;No;NA
+Punta Indio;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Quilmes;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Ramallo;Buenos Aires;Sí;5133/15-5176/15;2015;Vigente;Ordenanza municipal;Integral;300;No;NA;NA;NA;300;NA;100;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;NA
+Rauch;Buenos Aires;Sí;850/12;2012;Vigente;Ordenanza municipal;Integral;NA;Sí;500;2000;NA;500;1000;50;NA;No;Sí;No;No;No;No;No;No;Sí;No;No;No;NA
+Rivadavia;Buenos Aires;Sí;3371/2011-3639/2014;2011;Vigente;Ordenanza municipal;Integral;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;Sí;No;No;Sí;No;No;No;No;NA
+Rojas;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;Sí;Iniciativas 2018 sin ordenanza constatada
+Roque Pérez;Buenos Aires;Sí;2192/2018;2018;Vigente;Ordenanza municipal;Integral;300;No;700;3000;NA;NA;500;NA;100;No;No;Sí;Sí;Sí;Sí;No;Sí;No;No;No;No;NA
+Saavedra;Buenos Aires;Sí;6092/2012;2012;Vigente;Ordenanza municipal;Regula distancias;150;No;NA;2000;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;NA
+Saladillo;Buenos Aires;Sí;41/13;2013;Vigente;Ordenanza municipal;Integral;500;No;NA;5000;NA;100;NA;20;NA;No;Sí;Sí;No;No;No;No;Sí;No;No;No;No;NA
+Salliqueló;Buenos Aires;Sí;1584/14-1620/15-1835/19;2014;Vigente;Ordenanza municipal;Integral;NA;Sí;NA;NA;NA;NA;NA;NA;NA;Sí;No;No;No;Sí;Sí;No;Sí;No;No;No;Sí;Promueve agroecología (Ord. 1835/19)
+Salto;Buenos Aires;Sí;86/14;2014;Vigente;Ordenanza municipal;Integral;NA;No;500;2000;NA;NA;NA;15;NA;No;No;Sí;Sí;No;Sí;No;Sí;Sí;No;No;No;NA
+San Andrés de Giles;Buenos Aires;Sí;204/17-1354/18;2017;Vigente;Ordenanza municipal;Integral;100;No;2000;2000;NA;100;NA;NA;NA;Sí;No;Sí;No;No;Sí;No;Sí;No;No;No;No;NA
+San Antonio de Areco;Buenos Aires;Sí;3919/14-4226/17;2014;Vigente;Ordenanza municipal;Integral;100;No;2000;NA;NA;100;NA;NA;NA;Sí;No;Sí;No;Sí;Sí;Sí;No;No;No;No;No;NA
+San Cayetano;Buenos Aires;Sí;992/2000;2000;Vigente;Mixto;Regula distancias;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Regula solo aplicación aérea
+San Fernando;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+San Isidro;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+San Miguel;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+San Miguel del Monte;Buenos Aires;Sí;4250/19;2019;Vigente;Mixto;Adhesión provincial;100;No;500;NA;NA;NA;NA;50;NA;No;No;Sí;No;No;Sí;No;No;Sí;No;No;No;NA
+San Nicolás;Buenos Aires;Sí;7044/07-8852/14;2007;Vigente;Ordenanza municipal;Integral;50;No;300;2000;NA;NA;NA;NA;NA;Sí;No;Sí;No;No;No;No;Sí;No;No;No;No;NA
+San Pedro;Buenos Aires;Sí;5579/06;2006;Vigente;Ordenanza municipal;Regula distancias;300;No;NA;2000;1000;NA;NA;NA;NA;No;No;No;No;No;No;No;Sí;No;No;No;No;NA
+San Vicente;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Suipacha;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Tandil;Buenos Aires;Sí;17404/21;2021;Vigente;Ordenanza municipal;Integral;NA;No;NA;2000;NA;2000;2000;NA;NA;No;Sí;Sí;No;No;Sí;No;No;No;No;No;No;Reglamentada por Dec. 2022-1800
+Tapalqué;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Tigre;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Tordillo;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Tornquist;Buenos Aires;Sí;2725/15;2015;Vigente;Ordenanza municipal;Regula distancias;200;No;800;2000;NA;200;NA;NA;NA;No;No;Sí;No;No;No;No;No;Sí;No;No;No;NA
+Trenque Lauquen;Buenos Aires;Sí;3965/2013;2013;Vigente;Ordenanza municipal;Integral;300;No;500;NA;NA;NA;NA;30;NA;No;No;No;No;No;Sí;No;No;Sí;No;No;No;NA
+Tres Arroyos;Buenos Aires;Sí;7084/17;2017;Vigente;Ordenanza municipal;Crea registro;NA;No;NA;NA;NA;NA;NA;NA;NA;No;Sí;No;No;No;No;No;No;No;No;No;No;Regula circulación, no fija distancias
+Tres de Febrero;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Tres Lomas;Buenos Aires;Sí;1246/18;2018;Vigente;Ordenanza municipal;Integral;300;No;700;NA;NA;NA;NA;NA;NA;No;Sí;No;No;No;Sí;No;No;No;No;No;No;NA
+Vicente López;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Villa Gesell;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Villarino;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Zárate;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Zavalla;Buenos Aires;Sí;38/11;2011;Vigente;Ordenanza municipal;Regula distancias;800;No;NA;3000;NA;NA;NA;NA;NA;No;Sí;No;No;No;No;Sí;No;No;No;No;No;NA
+Islas Baradero;Buenos Aires;Sí;6483/2018;2018;Vigente;Ordenanza municipal;Integral;200;No;NA;2000;NA;200;2000;NA;NA;Sí;Sí;Sí;Sí;Sí;Sí;No;Sí;No;No;No;No;Exige receta agronómica y tecnología antideriva
+Islas Campana;Buenos Aires;Sí;5792/11;2011;Vigente;Ordenanza municipal;Integral;1000;Sí;NA;NA;NA;1000;NA;50;NA;Sí;No;Sí;No;No;Sí;No;No;Sí;No;No;No;Aérea prohibida en territorio continental, en islas solo Clase IV, cursos menores cuatro veces el ancho
+Islas de San Nicolas;Buenos Aires;Sí;7044/07-8852/14;2007;Vigente;Ordenanza municipal;Integral;50;No;300;2000;NA;NA;NA;NA;NA;Sí;No;Sí;No;No;No;No;Sí;No;No;No;No;NA
+Islas de Zárate;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Islas Ramallo;Buenos Aires;Sí;5133/15-5176/15;2015;Vigente;Ordenanza municipal;Integral;300;No;NA;NA;NA;300;NA;100;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;NA
+Islas San Fernando;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Islas San Pedro;Buenos Aires;Sí;5579/06;2006;Vigente;Ordenanza municipal;Regula distancias;300;No;NA;2000;1000;NA;NA;NA;NA;No;No;No;No;No;No;No;Sí;No;No;No;No;NA
+Islas Tigre;Buenos Aires;No;NA;NA;Vigente;Ley provincial 10.699;NA;NA;No;NA;2000;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Adhesión provincial
+Achiras;Córdoba;Sí;937;2012;Vigente;Ordenanza municipal;Integral;NA;Sí;500;1500;NA;NA;NA;NA;NA;No;No;Sí;No;No;Sí;No;No;No;No;No;No;Ordenanza no disponible texto completo
+Alta Gracia;Córdoba;Sí;9375 y 9378;2009;Vigente;Ordenanza municipal;Integral;1500;Sí;1000;NA;NA;NA;NA;NA;NA;No;No;Sí;No;No;Sí;Sí;No;No;No;No;No;Prohibición aérea total en ejido
+Anisacate;Córdoba;Sí;14;2012;Vigente;Mixto;Adhesión provincial;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Zona de Resguardo ejido completo prohibición total
+Colonia General Baldissera;Córdoba;Sí;508;2012;Vigente;Ordenanza municipal;Regula distancias;NA;No;NA;1500;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Aérea prohibida 1500 m
+Corral De Bustos;Córdoba;Sí;926;2008;Vigente;Ordenanza municipal;Integral;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Prohibición total dentro de zona de resguardo
+Dique Chico;Córdoba;Sí;242;2017;Parcialmente suspendida;Ordenanza municipal;Integral;1000;Sí;500;NA;NA;1000;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;Sí;Sí;No;Medida judicial suspendió provisoriamente la aplicación
+Freyre;Córdoba;Sí;133;2005;Vigente;Mixto;Adhesión provincial;NA;No;NA;NA;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Sin distancias municipales propias rige ley provincial
+Huinca Renancó;Córdoba;Sí;1221;2011;Vigente;Ordenanza municipal;Integral;NA;Sí;500;1500;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;Prohibición terrestre total en zona de resguardo
+Jesús María;Córdoba;Sí;2765;2008;Vigente;Mixto;Integral;500;Sí;1000;NA;NA;NA;NA;NA;NA;Sí;No;Sí;No;No;Sí;Sí;No;No;No;No;No;Aérea prohibida en todo el ejido municipal
+Juárez Celman;Córdoba;Sí;445 y 495;2009 y 2010;Vigente;Mixto;Integral;250;No;NA;NA;NA;250;NA;NA;NA;No;No;Sí;No;No;Sí;No;No;No;No;No;No;Prohibición 2 4 D y 2 4 DB éster aviso previo 48 h
+Las Bajadas;Córdoba;Sí;8;2012;Vigente;Mixto;Prohibición puntual;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Prohibición total en ejido urbano
+Las Calles;Córdoba;Sí;41;2008;Vigente;Ordenanza municipal;Prohibición puntual;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;Sí;No;No;No;No;No;Prohibición total aérea y terrestre zona libre de agrotóxicos
+Leones;Córdoba;Sí;801;2006;Vigente;Mixto;Adhesión provincial;NA;No;NA;NA;NA;NA;NA;NA;NA;Sí;No;No;No;No;No;No;No;No;No;No;No;Sin distancias municipales propias rige ley provincial
+Monte Maíz;Córdoba;Sí;NA;2015;Vigente;Ordenanza municipal;Integral;500;Sí;1000;2000;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;Zona de resguardo variable 500 a 800 m prohibición circulación y guarda de equipos
+Montecristo;Córdoba;Sí;752;2008;Vigente;Mixto;Integral;150;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;Sí;No;No;No;No;No;Prohibición aérea en zona de control exclusión 150 m clases Ia Ib II
+Río Tercero;Córdoba;Sí;2354 2981 3100 3105;2004 2008 2009;Vigente;Mixto;Integral;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;Sí;No;No;No;No;No;Zona de resguardo ambiental prohibición total relocalización obligatoria de depósitos
+San Francisco;Córdoba;Sí;5531;NA;Vigente;Ordenanza municipal;Integral;500;Sí;1000;1500;NA;NA;NA;NA;NA;No;No;Sí;No;No;Sí;No;No;No;No;No;No;Restricción tránsito y limpieza de equipos autorización municipal obligatoria
+Villa General Belgrano;Córdoba;Sí;1516;2009;Vigente;Ordenanza municipal;Integral;500;No;NA;NA;NA;NA;NA;500;NA;No;No;No;No;No;No;Sí;Sí;Sí;No;No;No;Prohibición aérea total restricción horaria protección cursos de agua
+Villa María;Córdoba;Sí;6118;NA;Vigente;Ordenanza municipal;Integral;200;Sí;1500;1500;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;Zona de resguardo 200 m autorización municipal obligatoria
+Colón;Entre Ríos;Sí;55;2012;Vigente;Ordenanza municipal;Integral;2000;Sí;NA;3000;NA;2000;NA;NA;NA;Sí;No;Sí;No;No;Sí;No;No;No;No;No;No;Exclusión amplia urbana y periurbana aviso previo 48 h
+Gualeguaychú;Entre Ríos;Sí;11318 y 12963;2009 y 2024;Vigente;Mixto;Integral;200;No;NA;NA;NA;NA;NA;NA;NA;Sí;No;Sí;No;No;Sí;Sí;No;No;Sí;No;No;Derogación prohibición glifosato por fallo TSJ
+San José;Entre Ríos;Sí;19;2018;Vigente;Ordenanza municipal;Integral;300;Sí;NA;NA;NA;300;NA;NA;NA;Sí;No;Sí;No;Sí;Sí;Sí;No;Sí;No;No;No;Transición agroecológica en intersticio urbano
+San Anita;Entre Ríos;Sí;93;2008;Vigente;Mixto;Regula distancias;200;No;1000;3000;NA;NA;NA;NA;NA;No;No;Sí;No;Sí;Sí;No;No;No;No;No;No;Aviso previo 24 h perímetro urbano definido por calles
+Urdinarrain;Entre Ríos;Sí;1113;2016;Vigente;Ordenanza municipal;Integral;600;Sí;500;3000;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;Restricción adicional disposición envases vacíos
+Viale;Entre Ríos;Sí;1;2018;Suspendida;Ordenanza municipal;Prohibición puntual;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;Sí;No;Suspensión temporaria pulverizaciones
+Victoria;Entre Ríos;Sí;2790;2009;Vigente;Ordenanza municipal;Prohibición puntual;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Excepción parcelas rurales específicas
+Villa Elisa;Entre Ríos;Sí;1920;2018;Vigente;Ordenanza municipal;Integral;400;Sí;2500;NA;NA;NA;100;NA;NA;Sí;No;No;No;No;Sí;No;No;Sí;No;No;No;Zona de mitigación y control diferenciadas
+Villa Larroque;Entre Ríos;Sí;355;2004;Vigente;Ordenanza municipal;Regula distancias;500;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Texto completo no accesible referencia secundaria
+Eduardo Castex;La Pampa;Sí;35;2013;Vigente;Mixto;Integral;500;No;NA;1500;NA;NA;NA;NA;NA;No;No;Sí;Sí;Sí;Sí;No;Sí;No;No;No;No;Adhesión ley provincial prohibición aérea 1500 m
+General Pico;La Pampa;Sí;185 y 132;2009 y 2013;Vigente;Ordenanza municipal;Integral;500;No;1000;NA;NA;NA;NA;NA;NA;No;Sí;Sí;No;No;Sí;Sí;No;No;No;No;No;Prohibición ingreso y depósito de equipos suelo urbanizable
+Ingeniero Luiggi;La Pampa;Sí;58;2012;Vigente;Ordenanza municipal;Integral;NA;No;500;1000;1500;NA;NA;NA;NA;No;No;Sí;No;Sí;Sí;No;No;No;No;No;No;Escalonamiento por bandas toxicológicas muy detallado
+Rancul;La Pampa;Sí;43;2013;Vigente;Ordenanza municipal;Integral;500;No;2000;2000;NA;500;2000;NA;NA;No;No;Sí;Sí;No;Sí;No;Sí;No;No;No;No;Prohibición aérea hasta 2000 m aviso previo obligatorio
+Realico;La Pampa;Sí;16;2015;Vigente;Ordenanza municipal;Integral;NA;Sí;1000;1000;NA;NA;NA;NA;NA;No;No;Sí;No;No;No;No;No;No;No;No;No;Zona protección ambiental solo línea jardín dentro ejido
+Santa Rosa;La Pampa;Sí;4822;2013;Vigente;Ordenanza municipal;Integral;500;No;NA;2000;NA;NA;NA;NA;NA;No;No;Sí;No;No;Sí;Sí;No;No;No;No;No;Centro poblado protección fuerte aérea 2000 m
+Trenel;La Pampa;Sí;2012;2012;Vigente;Ordenanza municipal;Integral;NA;Sí;500;1000;NA;500;1000;NA;NA;No;No;No;Sí;No;Sí;Sí;Sí;No;No;No;No;Zonas urbana suburbana y rural diferenciadas
+Winifreda;La Pampa;Sí;478;2015;Vigente;Ordenanza municipal;Integral;500;No;1000;1000;NA;NA;NA;NA;NA;Sí;No;Sí;No;No;Sí;Sí;No;No;No;No;No;Zona buffer con fuerte control municipal
+General Roca;Neuquén;Sí;4232;2006;Vigente;Ordenanza municipal;Regula envases residuos;NA;No;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Ordenanza regula manejo de envases vacíos no establece distancias
+San Carlos De Bariloche;Río Negro;Sí;2164-CM-11;2011;Vigente;Ordenanza municipal;Prohibición puntual;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;No;No;No;No;No;No;Prohibición total de uso aplicación y venta de glifosato en todo el ejido municipal
+Las Lajitas;Salta;Sí;NA;NA;Vigente;Ordenanza municipal;Integral;500;Sí;1500;1500;NA;NA;NA;NA;NA;No;No;Sí;No;No;Sí;Sí;No;No;No;No;No;Zona de Resguardo 500 m prohibición total salvo agricultura orgánica autorización municipal obligatoria
+Arequito;Santa Fe;Sí;965;2011;Vigente;Mixto;Integral;500;No;1000;3000;NA;NA;NA;NA;NA;No;Sí;No;No;No;Sí;No;No;No;No;No;No;Zona 1000 m sin productos volátiles prohibición banda roja en todo el distrito
+Casilda;Santa Fe;Sí;NA;NA;Vigente;Mixto;Regula distancias;500;No;NA;1000;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;No;No;No;Texto completo no accesible aérea prohibida 1000 m
+El Trébol;Santa Fe;Sí;149;1991;Vigente;Ordenanza municipal;Regula distancias;NA;No;NA;3000;NA;NA;NA;3000;NA;No;No;Sí;No;No;Sí;No;No;No;No;No;No;Protección represas agua potable aviso previo 24 h
+Santa Fe;Santa Fe;Sí;11462;2018;Vigente;Ordenanza municipal;Prohibición puntual;NA;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;No;Sí;No;No;No;No;No;Aérea prohibida total en ejido restricción terrestre clases I y II
+Sastre;Santa Fe;Sí;1174;2019;Parcialmente suspendida;Ordenanza municipal;Integral;1000;Sí;1200;3000;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;Sí;Sí;No;Fallo 2023 fija exclusión terrestre 1000 m e inconstitucionalidad parcial
+Ortiz;Santa Fe;Sí;1174;2019;Parcialmente suspendida;Ordenanza municipal;Integral;1000;Sí;1200;3000;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;No;No;Sí;Sí;No;Fallo 2023 fija exclusión terrestre 1000 m e inconstitucionalidad parcial
+Bandera;Santiago del Estero;Sí;1;2017;Vigente;Mixto;Regula distancias;100;Sí;NA;NA;NA;NA;NA;NA;NA;No;No;No;No;No;Sí;No;Sí;No;No;No;No;Adhiere Ley 6312 establece zona de exclusión poligonal prohíbe banda roja y hormonales anti deriva obligatorio
