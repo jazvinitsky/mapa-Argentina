@@ -36,7 +36,12 @@
   top: 0;
   height: 100vh;
 }
-  #main { flex: 1; position: relative; }
+  #main{
+  flex: 1;
+  position: relative;
+  min-width: 0;     /* CLAVE: permite que se recorte a la pantalla */
+  overflow: hidden; /* evita scroll horizontal del “main” */
+}
   #map {
     height: 100%;
     width: 100%;
@@ -285,6 +290,22 @@ body{
   margin: 0 auto;        /* centra el panel */
   padding: 0 12px;       /* un borde interno */
   box-sizing: border-box;
+}
+/* Primera columna fija */
+#tbl thead th:first-child{
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+  box-shadow: 1px 0 0 rgba(0,0,0,0.10);
+}
+
+#tbl tbody td:first-child{
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: #fff;
+  box-shadow: 1px 0 0 rgba(0,0,0,0.06);
 }
 </style>
         <title>Procesos de problematización ambiental por agroquímicos en Argentina: análisis espacial de noticias y ordenanzas</title>
